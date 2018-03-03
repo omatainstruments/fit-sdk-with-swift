@@ -84,7 +84,7 @@ public:
         FIT_UINT8 result;
         if(session_mesg_block != nil) {
             result = session_mesg_block(mesg);
-            NSLog(@"RESULT=%d", result);
+           // NSLog(@"RESULT=%d", result);
         }
     }
     
@@ -96,10 +96,10 @@ public:
         
         FIT_FLOAT64 _lat_sc = mesg.GetPositionLat();
         FIT_FLOAT64 _lon_sc = mesg.GetPositionLong();
-        FIT_FLOAT64 _lat_deg = (_lat_sc * 180) / _big;
-        FIT_FLOAT64 _lon_deg = _lon_sc * 180 / _big;
-        NSLog(@"Lat=%f", _lat_deg);
-        NSLog(@"Lon=%f", _lon_deg);
+//        FIT_FLOAT64 _lat_deg = (_lat_sc * 180) / _big;
+//        FIT_FLOAT64 _lon_deg = _lon_sc * 180 / _big;
+//        NSLog(@"Lat=%f", _lat_deg);
+//        NSLog(@"Lon=%f", _lon_deg);
         
         /**
          *   Three ways of getting data back to the human world
@@ -107,22 +107,24 @@ public:
          */
         
         // Option 1: using method callback
+        /*
         if(parent != nil) {
             [parent method_callback:_lat_deg];
         }
-        
+        */
         // Option 2: using block with params and return value
         FIT_UINT8 result;
         if(record_mesg_block != nil) {
             result = record_mesg_block(mesg);
-            NSLog(@"RESULT=%d", result);
+            //NSLog(@"RESULT=%d", result);
         }
         
         // Option 3: using a simple block
+        /*
         if(simple_block != nil) {
             simple_block();
         }
-        
+        */
     
     }
     
@@ -204,6 +206,7 @@ public:
 
     void OnMesg(fit::Mesg& mesg)
     {
+        /*****
         NSLog(@"New Mesg: %s. It has %d field(s) and %d developer field(s).", mesg.GetName().c_str(), mesg.GetNumFields(), mesg.GetNumDevFields());
 
         for (FIT_UINT16 i = 0; i < (FIT_UINT16)mesg.GetNumFields(); i++)
@@ -218,6 +221,7 @@ public:
             NSLog(@"Developer Field(%s) has %d value(s)", devField.GetName().c_str(), devField.GetNumValues());
             PrintValues(devField);
         }
+        *****/
     }
 };
 
@@ -348,10 +352,10 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
             FIT_FLOAT64 _lon_sc = mesg.GetPositionLong();
             FIT_FLOAT64 _lat_deg = (_lat_sc) / SEMICIRCLES_PER_DEGREE;
             FIT_FLOAT64 _lon_deg = _lon_sc / SEMICIRCLES_PER_DEGREE;
-            NSLog(@"Timestamp (UTC)=%@", [self fitTimestampToUTCNSDate:mesg.GetTimestamp()]);
-            NSLog(@"Lat=%f", _lat_deg);
-            NSLog(@"Lon=%f", _lon_deg);
-            NSLog(@"Speed=%f", mesg.GetSpeed());
+//            NSLog(@"Timestamp (UTC)=%@", [self fitTimestampToUTCNSDate:mesg.GetTimestamp()]);
+//            NSLog(@"Lat=%f", _lat_deg);
+//            NSLog(@"Lon=%f", _lon_deg);
+//            NSLog(@"Speed=%f", mesg.GetSpeed());
             
             
             NSDictionary *d = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -380,10 +384,10 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
         // CALLBACK WITH PARAMETER
         listener.setup_block_with_event_mesg_param(^FIT_UINT8(fit::EventMesg mesg) {
             //
-            NSLog(@"Type: %d", mesg.GetEventType());
-            NSLog(@"Timestamp (UTC)=%@", [self fitTimestampToUTCNSDate:mesg.GetTimestamp()]);
-            NSLog(@"Name: %s", mesg.GetName().c_str());
-            NSLog(@"Battery Value: %f", mesg.GetBatteryLevel());
+//            NSLog(@"Type: %d", mesg.GetEventType());
+//            NSLog(@"Timestamp (UTC)=%@", [self fitTimestampToUTCNSDate:mesg.GetTimestamp()]);
+//            NSLog(@"Name: %s", mesg.GetName().c_str());
+//            NSLog(@"Battery Value: %f", mesg.GetBatteryLevel());
             //NSDate *x = [self fitTimestampToUTCNSDate:mesg.GetTimestamp()];
             NSDictionary *d = [NSDictionary dictionaryWithObjectsAndKeys:
             [NSNumber numberWithDouble:mesg.GetEventType()], @"event_type",

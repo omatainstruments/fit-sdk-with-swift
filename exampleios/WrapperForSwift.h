@@ -6,6 +6,8 @@
 //
 //
 //
+//#ifndef WrapperForSwift_h
+//#define WrapperForSwift_h
 #import <Foundation/Foundation.h>
 
 @class SwiftThatUsesWrapperForSwift;
@@ -17,3 +19,5 @@
 - (void)method_callback:(Float64)val;
 - (void)setSupervisor:(SwiftThatUsesWrapperForSwift *)_supervisor;
 @end
+
+//#endif /* WrapperForSwift_h */

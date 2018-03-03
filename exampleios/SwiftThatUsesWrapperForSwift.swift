@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+import XCGLogger
 //extension String {
 //    
 //    var RFC3986UnreservedEncoded:String {
@@ -24,33 +24,35 @@ import Foundation
     var sessionMessages: Array<Any> = Array()
     var eventMessages: Array<NSDictionary> = Array()
     var fileIDMessages: Array<Any> = Array()
-    
+    let log = XCGLogger.default
     
     func callback(timestamp: UInt32) -> Void {
         NSLog("%d", timestamp)
     }
     
-    func callback(eventMesg: NSDictionary) -> Void {
+    @objc func callback(eventMesg: NSDictionary) -> Void {
         eventMessages.append(eventMesg)
     }
     
-    func callback(sessionMesg: NSDictionary) -> Void {
+    @objc func callback(sessionMesg: NSDictionary) -> Void {
         sessionMessages.append(sessionMesg)
-        NSLog("\(sessionMessages)")
+        //NSLog("\(sessionMessages)")
+        //log.debug(sessionMessages)
     }
     
-    func callback(recordMesg: NSDictionary) -> UInt8 {
-        NSLog("%@", recordMesg)
+    @objc func callback(recordMesg: NSDictionary) -> UInt8 {
+        //NSLog("%@", recordMesg)
+        //log.debug(recordMesg)
         recordMessages.append(recordMesg)
         //recordMesgs.append(recordMesg as! Dictionary<String, Any>)
         return 0;
     }
     
-    func callback(fileIDMesg: NSDictionary) -> Void {
+    @objc func callback(fileIDMesg: NSDictionary) -> Void {
         fileIDMessages.append(fileIDMesg)
     }
     
-    func decodeFitFile(file : URL)
+    @objc func decodeFitFile(file : URL)
     {
         let wrapper:WrapperForSwift = WrapperForSwift(self)
         
@@ -59,13 +61,24 @@ import Foundation
         
     }
     
-    func doSomething() {
+    
+    
+    @objc func doSomething() {
         let wrapper:WrapperForSwift = WrapperForSwift(self)
         
         wrapper.setSupervisor(self)
         
-        wrapper.decode("/Users/julian/Code/FitSDKRelease_20.54.00/examples/Activity.fit")
+        log.debug("Starting decode")
+        wrapper.decode("/Users/julian/Downloads/180224212708.fit")
+        log.debug("Decoded ended")
         
+        var count = recordMessages.count
+        log.debug("recordMessages.count=\(count)")
+        
+        count = eventMessages.count
+        log.debug("eventMessages.count=\(count)")
+        
+        /*
         let fm: FileManager = FileManager()
         
         var files:[String]
@@ -134,7 +147,7 @@ import Foundation
         } catch {
             print(error)
         }
-        
+  */
         
    /*
         
