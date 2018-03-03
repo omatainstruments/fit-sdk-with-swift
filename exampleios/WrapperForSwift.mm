@@ -1,4 +1,4 @@
-//
+ //
 //  WrapperForSwift.m
 //  exampleios
 //
@@ -17,6 +17,7 @@
 #include "fit_record_mesg_listener.hpp"
 #include <dispatch/dispatch.h>
 #import "exampleios-Swift.h"
+#import <UIKit/UIKit.h>
 
 
 class ActivityListener : fit::FileIdMesgListener, fit::MesgListener, fit::EventMesgListener, fit::RecordMesgListener, fit::SessionMesgListener
@@ -131,10 +132,10 @@ public:
     
     void OnMesg(fit::FileIdMesg& mesg)
     {
-        NSLog(@"Type: %d", mesg.GetType());
-        NSLog(@"Manufacturer: %d", mesg.GetManufacturer());
-        NSLog(@"Product: %d", mesg.GetProduct());
-        NSLog(@"SerialNumber: %d", mesg.GetSerialNumber());
+        //NSLog(@"Type: %d", mesg.GetType());
+//        ALog(@"Manufacturer: %d", mesg.GetManufacturer());
+//        ALog(@"Product: %d", mesg.GetProduct());
+//        ALog(@"SerialNumber: %d", mesg.GetSerialNumber());
         
         //FIT_UINT8 result;
         if(fileid_mesg_block != nil) {
@@ -162,7 +163,7 @@ public:
         FIT_UINT8 result;
         if(event_mesg_block != nil) {
             result = event_mesg_block(mesg);
-            NSLog(@"RESULT=%d", result);
+            ALog(@"RESULT=%d", result);
         }
 
         
@@ -192,11 +193,11 @@ public:
                 case FIT_BASE_TYPE_UINT64Z:
                 case FIT_BASE_TYPE_FLOAT32:
                 case FIT_BASE_TYPE_FLOAT64:
-                    NSLog(@"%f", field.GetFLOAT64Value(j));
+                    ALog(@"%f", field.GetFLOAT64Value(j));
                     break;
                 case FIT_BASE_TYPE_STRING:
                     //NSLog(@"%@", [Example stringForWString:field.GetSTRINGValue(j)]);
-                    NSLog(@"Some String");
+                    ALog(@"Some String");
                     break;
                 default:
                     break;
@@ -262,7 +263,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
  */
 - (void)method_callback:(Float64)val
 {
-    NSLog(@"Method Callback: %f", val);
+    ALog(@"Method Callback: %f", val);
 }
 
 
@@ -292,7 +293,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
     
     if(![fe Close])
     {
-        NSLog(@"Error closing file");
+        ALog(@"Error closing file");
         return -1;
     }
     
@@ -317,11 +318,11 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
         
         
         if ([fd IsFit:file]) {
-            NSLog(@"Fit File");
+            ALog(@"Fit File");
         }
         if( file == NULL)
         {
-            NSLog(@"Error opening file"/*, super.fileName*/);
+            ALog(@"Error opening file"/*, super.fileName*/);
             return result;
         }
         
@@ -331,7 +332,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
         listener.setParent(self);
         
         fit::MesgBroadcaster mesgBroadcaster = fit::MesgBroadcaster();
-        //mesgBroadcaster.AddListener((fit::ActivityMesgListener &)listener);
+        mesgBroadcaster.AddListener((fit::ActivityMesgListener &)listener);
         mesgBroadcaster.AddListener((fit::FileIdMesgListener &)listener);
         mesgBroadcaster.AddListener((fit::MesgListener &)listener);
         mesgBroadcaster.AddListener((fit::EventMesgListener &)listener);
@@ -341,7 +342,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
         
         // CALLBACK
         listener.block_with_no_params(^{
-            NSLog(@"Callback with no parameters, no return value");
+            ALog(@"Callback with no parameters, no return value");
         });
         
         
@@ -359,7 +360,8 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
             
             
             NSDictionary *d = [NSDictionary dictionaryWithObjectsAndKeys:
-                               [self dateToNSString:[self fitTimestampToUTCNSDate:mesg.GetTimestamp()]],@"timestamp",
+                               //[self dateToNSString:[self fitTimestampToUTCNSDate:mesg.GetTimestamp()]],@"timestamp",
+                               [self fitTimestampToUTCNSDate:mesg.GetTimestamp()], @"timestamp",
                                [NSNumber numberWithDouble:mesg.GetSpeed()], @"speed",
                                [NSNumber numberWithDouble:_lat_deg], @"position_lat",
                                [NSNumber numberWithDouble:_lon_deg], @"position_lon",
@@ -417,7 +419,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
             
             for(int i=0; i<mesg.GetNumFields(); i++) {
                fit::Field *field =  mesg.GetFieldByIndex(i);
-                 NSLog(@"   Field %d (%s) has %d value(s) and units %s", i, field->GetName().c_str(), field->GetNumValues(), field->GetUnits().c_str());
+                 ALog(@"   Field %d (%s) has %d value(s) and units %s", i, field->GetName().c_str(), field->GetNumValues(), field->GetUnits().c_str());
                 
             
                 
@@ -491,7 +493,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
         }
     }
     @catch (NSException *exception) {
-        NSLog(@"%@", [exception reason]);
+        ALog(@"%@", [exception reason]);
     }
     @finally {
         //return -1;

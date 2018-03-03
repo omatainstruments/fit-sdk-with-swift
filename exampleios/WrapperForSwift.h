@@ -6,8 +6,8 @@
 //
 //
 //
-//#ifndef WrapperForSwift_h
-//#define WrapperForSwift_h
+#ifndef WrapperForSwift_h
+#define WrapperForSwift_h
 #import <Foundation/Foundation.h>
 
 @class SwiftThatUsesWrapperForSwift;
@@ -20,4 +20,13 @@
 - (void)setSupervisor:(SwiftThatUsesWrapperForSwift *)_supervisor;
 @end
 
-//#endif /* WrapperForSwift_h */
+#ifdef DEBUG
+#define DLog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+#else
+#define DLog(...)
+#endif
+
+// ALog always displays output regardless of the DEBUG setting
+#define ALog(fmt, ...) NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__)
+
+#endif /* WrapperForSwift_h */
