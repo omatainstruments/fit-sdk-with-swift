@@ -17,7 +17,8 @@
 #import "SettingsExample.h"
 #import "MonitoringExample.h"
 #import "ActivityExample.h"
-#import "exampleios-Swift.h"
+#import "FitFileMapMaker-Swift.h"
+#import "WrapperForSwift.h"
 
 @interface ViewController ()
 

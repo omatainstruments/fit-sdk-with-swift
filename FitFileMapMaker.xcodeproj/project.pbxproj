@@ -26,14 +26,16 @@
 		B9581BF6204B04A500819441 /* WrapperForSwift.mm in Sources */ = {isa = PBXBuildFile; fileRef = B982425F1E5FB04B002D99FC /* WrapperForSwift.mm */; };
 		B9581BF7204B04A500819441 /* WrapperForSwift.h in Sources */ = {isa = PBXBuildFile; fileRef = B98242611E5FB174002D99FC /* WrapperForSwift.h */; };
 		B9581BF8204B04A500819441 /* SwiftThatUsesWrapperForSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98242631E5FB457002D99FC /* SwiftThatUsesWrapperForSwift.swift */; };
-		B9581BF9204B04A500819441 /* exampleios-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = B98242621E5FB457002D99FC /* exampleios-Bridging-Header.h */; };
 		B9581BFA204B04C900819441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B4EF251CD3B3320047D372 /* main.m */; };
 		B9581BFB204B05F300819441 /* DrawLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581BE9204AFAE300819441 /* DrawLinesViewController.swift */; };
 		B9B4AE161E98134B0059ADEB /* libFitSdkCppiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B4AE151E98134B0059ADEB /* libFitSdkCppiOS.a */; };
+		BD8E3D27F5A3A698840AECAA /* Pods_FitFileMapMaker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 264310C98239068E084D527D /* Pods_FitFileMapMaker.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		207236657003B07346CE2A9C /* Pods-exampleios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exampleios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-exampleios/Pods-exampleios.debug.xcconfig"; sourceTree = "<group>"; };
+		264310C98239068E084D527D /* Pods_FitFileMapMaker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FitFileMapMaker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		265BB58989477F376BDF5A41 /* Pods-FitFileMapMaker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitFileMapMaker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-FitFileMapMaker/Pods-FitFileMapMaker.debug.xcconfig"; sourceTree = "<group>"; };
 		7917669187A77D1640B918F7 /* Pods-exampleios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-exampleios.release.xcconfig"; path = "Pods/Target Support Files/Pods-exampleios/Pods-exampleios.release.xcconfig"; sourceTree = "<group>"; };
 		90B4EF211CD3B3320047D372 /* FitFileMapMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FitFileMapMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B4EF251CD3B3320047D372 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -56,10 +58,10 @@
 		B9581BE9204AFAE300819441 /* DrawLinesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawLinesViewController.swift; sourceTree = "<group>"; };
 		B982425F1E5FB04B002D99FC /* WrapperForSwift.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = WrapperForSwift.mm; sourceTree = "<group>"; };
 		B98242611E5FB174002D99FC /* WrapperForSwift.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WrapperForSwift.h; sourceTree = "<group>"; };
-		B98242621E5FB457002D99FC /* exampleios-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "exampleios-Bridging-Header.h"; sourceTree = "<group>"; };
 		B98242631E5FB457002D99FC /* SwiftThatUsesWrapperForSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftThatUsesWrapperForSwift.swift; sourceTree = "<group>"; };
 		B9B4AE151E98134B0059ADEB /* libFitSdkCppiOS.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFitSdkCppiOS.a; sourceTree = "<group>"; };
 		C7FFD310752520CDEED562F2 /* Pods_exampleios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_exampleios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC824CC944CD7B15F64C8E62 /* Pods-FitFileMapMaker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FitFileMapMaker.release.xcconfig"; path = "Pods/Target Support Files/Pods-FitFileMapMaker/Pods-FitFileMapMaker.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 			files = (
 				B9B4AE161E98134B0059ADEB /* libFitSdkCppiOS.a in Frameworks */,
 				7E2C95B276C7ACDDA678FB61 /* Pods_exampleios.framework in Frameworks */,
+				BD8E3D27F5A3A698840AECAA /* Pods_FitFileMapMaker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,6 +83,8 @@
 			children = (
 				207236657003B07346CE2A9C /* Pods-exampleios.debug.xcconfig */,
 				7917669187A77D1640B918F7 /* Pods-exampleios.release.xcconfig */,
+				265BB58989477F376BDF5A41 /* Pods-FitFileMapMaker.debug.xcconfig */,
+				DC824CC944CD7B15F64C8E62 /* Pods-FitFileMapMaker.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -88,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				C7FFD310752520CDEED562F2 /* Pods_exampleios.framework */,
+				264310C98239068E084D527D /* Pods_FitFileMapMaker.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -96,7 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				B9B4AE151E98134B0059ADEB /* libFitSdkCppiOS.a */,
-				90B4EF231CD3B3320047D372 /* exampleios */,
+				90B4EF231CD3B3320047D372 /* FitFileMapMaker */,
 				90B4EF221CD3B3320047D372 /* Products */,
 				26F551756AEDB257B023CABB /* Pods */,
 				8460EEAD2582C05CABFBF857 /* Frameworks */,
@@ -111,7 +117,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		90B4EF231CD3B3320047D372 /* exampleios */ = {
+		90B4EF231CD3B3320047D372 /* FitFileMapMaker */ = {
 			isa = PBXGroup;
 			children = (
 				90B4EF3D1CD3B4D30047D372 /* ActivityExample.h */,
@@ -135,9 +141,8 @@
 				B982425F1E5FB04B002D99FC /* WrapperForSwift.mm */,
 				B98242611E5FB174002D99FC /* WrapperForSwift.h */,
 				B98242631E5FB457002D99FC /* SwiftThatUsesWrapperForSwift.swift */,
-				B98242621E5FB457002D99FC /* exampleios-Bridging-Header.h */,
 			);
-			path = exampleios;
+			path = FitFileMapMaker;
 			sourceTree = "<group>";
 		};
 		90B4EF241CD3B3320047D372 /* Supporting Files */ = {
@@ -224,7 +229,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-exampleios/Pods-exampleios-frameworks.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FitFileMapMaker/Pods-FitFileMapMaker-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -237,7 +242,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-exampleios/Pods-exampleios-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitFileMapMaker/Pods-FitFileMapMaker-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		D2E1B8EE6A970F58447EE3B5 /* [CP] Copy Pods Resources */ = {
@@ -246,7 +251,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-exampleios/Pods-exampleios-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-FitFileMapMaker/Pods-FitFileMapMaker-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
@@ -255,7 +260,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-exampleios/Pods-exampleios-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-FitFileMapMaker/Pods-FitFileMapMaker-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC0408DE7FAFEBF7883D5105 /* [CP] Check Pods Manifest.lock */ = {
@@ -269,7 +274,7 @@
 			);
 			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-exampleios-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-FitFileMapMaker-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -299,7 +304,6 @@
 				B9581BF6204B04A500819441 /* WrapperForSwift.mm in Sources */,
 				B9581BF7204B04A500819441 /* WrapperForSwift.h in Sources */,
 				B9581BF8204B04A500819441 /* SwiftThatUsesWrapperForSwift.swift in Sources */,
-				B9581BF9204B04A500819441 /* exampleios-Bridging-Header.h in Sources */,
 				90B4EF451CD3B4D30047D372 /* ActivityExample.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,7 +419,7 @@
 		};
 		90B4EF391CD3B3320047D372 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 207236657003B07346CE2A9C /* Pods-exampleios.debug.xcconfig */;
+			baseConfigurationReference = 265BB58989477F376BDF5A41 /* Pods-FitFileMapMaker.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -431,7 +435,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garmin.fit.exampleios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "exampleios/exampleios-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FitFileMapMaker/FitFileMapMaker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
@@ -440,7 +444,7 @@
 		};
 		90B4EF3A1CD3B3320047D372 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7917669187A77D1640B918F7 /* Pods-exampleios.release.xcconfig */;
+			baseConfigurationReference = DC824CC944CD7B15F64C8E62 /* Pods-FitFileMapMaker.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -456,7 +460,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.garmin.fit.exampleios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "exampleios/exampleios-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "FitFileMapMaker/FitFileMapMaker-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				SWIFT_VERSION = 4.0;
 			};

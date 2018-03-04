@@ -16,8 +16,8 @@
 #include "fit_file_id_mesg_listener.hpp"
 #include "fit_record_mesg_listener.hpp"
 #include <dispatch/dispatch.h>
-#import "exampleios-Bridging-Header.h"
-#import "exampleios-Swift.h"
+#import "FitFileMapMaker-Bridging-Header.h"
+//#import "exampleios-Swift.h"
 #import <UIKit/UIKit.h>
 
 
