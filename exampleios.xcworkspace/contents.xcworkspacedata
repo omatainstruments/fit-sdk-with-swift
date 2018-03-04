@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:exampleios.xcodeproj">
+      location = "group:/Users/julian/Code/omata/fit-sdk-with-swift/RideMapMaker.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

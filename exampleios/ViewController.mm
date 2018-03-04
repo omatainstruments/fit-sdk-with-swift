@@ -31,7 +31,7 @@
     
     //SwiftThat
     SwiftThatUsesWrapperForSwift *wrapper = [[SwiftThatUsesWrapperForSwift alloc]init];
-    [wrapper doSomething];
+    [wrapper startDecode];
     
     
 //    SettingsExample *se = [[SettingsExample alloc] init];

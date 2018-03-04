@@ -16,6 +16,7 @@
 #include "fit_file_id_mesg_listener.hpp"
 #include "fit_record_mesg_listener.hpp"
 #include <dispatch/dispatch.h>
+#import "exampleios-Bridging-Header.h"
 #import "exampleios-Swift.h"
 #import <UIKit/UIKit.h>
 
@@ -419,7 +420,7 @@ FIT_FLOAT64 SEMICIRCLES_PER_DEGREE;
             
             for(int i=0; i<mesg.GetNumFields(); i++) {
                fit::Field *field =  mesg.GetFieldByIndex(i);
-                 ALog(@"   Field %d (%s) has %d value(s) and units %s", i, field->GetName().c_str(), field->GetNumValues(), field->GetUnits().c_str());
+                 //ALog(@"   Field %d (%s) has %d value(s) and units %s", i, field->GetName().c_str(), field->GetNumValues(), field->GetUnits().c_str());
                 
             
                 

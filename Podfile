@@ -7,4 +7,7 @@ target 'exampleios' do
 
   # Pods for exampleios
 pod 'XCGLogger', '~> 6.0.2'
+pod 'SnapKit'
+pod 'GoogleMaps', '= 2.6.0'
+
 end

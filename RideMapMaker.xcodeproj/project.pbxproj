@@ -28,6 +28,7 @@
 		B9581BF8204B04A500819441 /* SwiftThatUsesWrapperForSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98242631E5FB457002D99FC /* SwiftThatUsesWrapperForSwift.swift */; };
 		B9581BF9204B04A500819441 /* exampleios-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = B98242621E5FB457002D99FC /* exampleios-Bridging-Header.h */; };
 		B9581BFA204B04C900819441 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B4EF251CD3B3320047D372 /* main.m */; };
+		B9581BFB204B05F300819441 /* DrawLinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9581BE9204AFAE300819441 /* DrawLinesViewController.swift */; };
 		B9B4AE161E98134B0059ADEB /* libFitSdkCppiOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B9B4AE151E98134B0059ADEB /* libFitSdkCppiOS.a */; };
 /* End PBXBuildFile section */
 
@@ -185,7 +186,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 90B4EF1C1CD3B3320047D372 /* Build configuration list for PBXProject "exampleios" */;
+			buildConfigurationList = 90B4EF1C1CD3B3320047D372 /* Build configuration list for PBXProject "RideMapMaker" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -225,11 +226,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-exampleios/Pods-exampleios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -243,9 +246,12 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-exampleios/Pods-exampleios-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleMaps.bundle",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -277,6 +283,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B9581BFB204B05F300819441 /* DrawLinesViewController.swift in Sources */,
 				B9581BFA204B04C900819441 /* main.m in Sources */,
 				B9581BEB204B04A500819441 /* ActivityExample.h in Sources */,
 				B9581BEC204B04A500819441 /* Example.h in Sources */,
@@ -357,7 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -397,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -458,7 +465,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		90B4EF1C1CD3B3320047D372 /* Build configuration list for PBXProject "exampleios" */ = {
+		90B4EF1C1CD3B3320047D372 /* Build configuration list for PBXProject "RideMapMaker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				90B4EF361CD3B3320047D372 /* Debug */,

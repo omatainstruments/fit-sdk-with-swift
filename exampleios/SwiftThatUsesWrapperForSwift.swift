@@ -74,6 +74,8 @@ struct RecordMessage {
     
 }
 
+typealias Vector = (record : RecordMessage, distance : Double, bearingAvg : Double, bearingChange : Double)
+
 @objc class SwiftThatUsesWrapperForSwift:NSObject {
     
     var recordMessages : Array<Any> = Array()
@@ -119,9 +121,8 @@ struct RecordMessage {
     
 
     
-    func recordMessagesToSomething() {
+    func recordMessagesToSomething() -> Array<Vector> {
         var foo : [RecordMessage] = recordMessages.map {
-            
             //let (index, element) = arg
             //log.debug($0)
             var message : RecordMessage = RecordMessage()
@@ -131,7 +132,7 @@ struct RecordMessage {
             }
             return message
         }
-        log.debug(foo.count)
+        //log.debug(foo.count)
         
         foo = foo.enumerated().map { (arg) in
             var (index, message) = arg
@@ -141,9 +142,8 @@ struct RecordMessage {
             return message
         }
         
-        typealias tupe = (record : RecordMessage, distance : Double, bearingAvg : Double, bearingChange : Double)
         log.debug("Start Computing Average Bearings")
-        var vectors : [ tupe ] = foo.chunks(10).map { (chunk) in
+        var vectors : [ Vector ] = foo.chunks(200).map { (chunk) in
             //log.debug(chunk)
             let r = chunk.reduce(0, { x, y  in
                 return x + y.bearingToNext!
@@ -173,22 +173,22 @@ struct RecordMessage {
             return ($0.element.record, $0.element.distance, $0.element.bearingAvg, bearingChanges[$0.offset])
         }
         
-        for element in vectors {
-            log.debug("(\(element.record.location.coordinate.latitude) \(element.record.location.coordinate.longitude)) \(element.bearingChange)")
-        }
+//        for element in vectors {
+//            log.debug("(\(element.record.location.coordinate.latitude) \(element.record.location.coordinate.longitude)) \(element.bearingChange)")
+//        }
         
 //        for message in foo {
 //            log.debug("Bearing=\(String(describing: message.bearingToNext))")
 //        }
         
         //foo.sorted(by: { $0.positionLatitude > $1.positionLatitude})
+        return vectors
     }
     
 
     
-    @objc func doSomething() {
+    @objc func startDecode() {
         log.setup(level: .debug, showThreadName: false, showLevel: false, showFileNames: false, showLineNumbers: true)
-
         
         let wrapper:WrapperForSwift = WrapperForSwift(self)
         
@@ -204,7 +204,7 @@ struct RecordMessage {
         count = eventMessages.count
         log.debug("eventMessages.count=\(count)")
         
-        recordMessagesToSomething()
+        //recordMessagesToSomething()
         /*
          let fm: FileManager = FileManager()
          
@@ -310,11 +310,6 @@ struct RecordMessage {
          */
         //wrapper.decode()
         //wrapper.encode()
-        
-        
-        
-        
-        
     }
     
     
